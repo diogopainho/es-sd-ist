@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+    <handler-chain>
+        <!--handler>
+            <handler-class>pt.tecnico.bubbledocs.sdstore.ws.handler.MessageContextHandler</handler-class>
+        </handler-->
+        <!--handler>
+            <handler-class>pt.tecnico.bubbledocs.sdstore.ws.handler.HeaderHandler</handler-class>
+        </handler-->
+        <handler>
+            <handler-class>pt.tecnico.bubbledocs.sdstore.ws.handler.RelayServerHandler</handler-class>
+        </handler>
+        <handler>
+            <handler-class>pt.tecnico.bubbledocs.sdstore.ws.handler.TagServerHandler</handler-class>
+        </handler>
+        <handler>
+            <handler-class>pt.tecnico.bubbledocs.sdstore.ws.handler.LoggingHandler</handler-class>
+        </handler>
+    </handler-chain>
+</handler-chains>

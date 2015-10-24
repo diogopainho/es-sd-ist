@@ -1,0 +1,58 @@
+Retrospectiva da primeira semana de trabalho:
+André Policarpo: Implementei as tasks planeadas no início da semana e tudo correu como esperado, sem problemas.
+
+André Caldeira: Apenas implementei uma das tasks planeadas. Tive duvidas na task que não implementei. Amanhã esclareço-as e na próxima semana fecho a task. 
+
+Diogo Nicolau: Implementei maioria das tasks planeadas, no entanto ainda nada foi testado. 
+Tive alguns problemas com conflitos que me roubaram mais tempo do que estava a espera.
+
+Diogo Painho: Implementei as task que planiei no inicio da semana 
+e mais algumas, uma vez que me parceram problemas simples de 
+resolver e que nao pediam muito tempo. Nao terminei o serviço de 
+integração RemoveUserIntegrator, uma vez que são necessários alguns
+serviços de apoio à integração (para resolver a compensação) que 
+ainda nao foram desonvolvidos e não estavam planeados para este 
+semana. 
+
+Michael Santos: 
+Duvida no login user. É suposto o login local funcionar de forma independente do login remoto? E se sim, como?
+
+Natalino Cordeiro:
+Implementei  uma das tasks planeadas. Entretanto como consegui mais algum tempo livre, 
+decidi escoloher mais algumas tasks das quais também só implementei uma parte.
+O motivo pelo qual não implementei as tasks #57, #64, #81 e #84, foi precisar de 
+discutir alguns aspectos do projecto com o grupo, antes de proceder à sua implementação 
+e como tal, deixei estas planeadas para semana seguinte.
+
+Dúvidas: 
+-É suposto fazer copy paste dos atributos para o Integrator quando 
+há chamadas remotas ou devemos fazer getters e setters nos serviços locais? 
+
+-Como tratar a compatibilidade das excepções?
+
+-Os serviços de integração para os serviços locais basta fazer create
+service (local) e no execute do integrator fazer o execute do local? 
+
+-Para que serve o dto? 
+
+-Onde deve estar os serviços de apoio à integração? 
+
+-Onde incluir os testes aos serviços de integração? 
+
+-LoginIntegrator, como fazer se chamamos primeiro o local e só depois o remoto?
+
+-Como atualizar a palavra passe local se é primeiro feita a chamada local? 
+
+
+
+
+Plano do projeto e execução da Second Week 
+
+| Membro do Grupo      | S | T | Q | Q | S | S | D |  Task Planeadas  | Task Implementadas  |
+
+| André Policarpo      | - | - | - | 4 | - | - | - |   75, 76, 96     |           74, 75, 76         |
+| André Caldeira       | 1 | - | 1 | - | - | 2 | - |   60, 62,63      |           -         |
+| Diogo Nicolau        | - | - | - | - | - | 3 | 3 |   89, 90, 95     |           -         |
+| Diogo Painho         | - | - | - | - | - | 2 | 3 |   68, 79, 80     |           -         |
+| Michael Santos       | - | - | - | - | - | 2 | 3 |         -        |           -         |
+| Natalino Cordeiro    | - | - | - | 4 | - | - | - |  57, 64, 81, 84  | 57, 64, 81, 84      |

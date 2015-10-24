@@ -1,0 +1,148 @@
+package pt.tecnico.bubbledocs.domain;
+
+class User{
+	String token;
+	String name;
+	String password;
+	String username;
+	String email;
+}
+
+class SpreadSheet {
+	int id;
+	String name;
+	DateTime date;
+	String author;
+	int numlines;
+	int numcolumns;
+}
+
+class Permissions {
+	String username;
+	boolean permissionLevel;
+	boolean isAuthor;
+	long ssId;
+}
+
+class Cell{
+	int line;
+	int column;
+	boolean lock;
+}
+
+class Session{
+	DateTime dateOfLastLogin;
+	String userToken;
+}
+
+class Content;
+
+class NonFunction extends Content;
+
+class Literal extends NonFunction {
+	int value;
+}
+
+class Reference extends NonFunction;
+
+class Function extends Content;
+
+class BinaryFunction extends Function;
+
+class ADD extends BinaryFunction;
+
+class SUB extends BinaryFunction;
+
+class DIV extends BinaryFunction;
+
+class MUL extends BinaryFunction;
+
+class IntervalFunction extends Function;
+
+class AVG extends IntervalFunction;
+
+class PRD extends IntervalFunction;
+
+class Interval;
+
+class BubbleDocs {
+	int spreadCount;
+}
+
+relation DomainRootHasBubbleDocs {
+	.pt.ist.fenixframework.DomainRoot playsRole root {
+    multiplicity 0..1;
+  }
+  BubbleDocs playsRole bubbleDocs {
+  	multiplicity 0..1;
+  }
+}
+
+relation SpreadSheetContainsCells {
+	SpreadSheet playsRole spreadSheet;
+	Cell playsRole cells {
+		multiplicity 0..*;
+	}
+}
+
+
+relation BubbleDocsContainsPermissions {
+	BubbleDocs playsRole bubbleDocs;
+	Permissions playsRole permissions {
+		multiplicity *;
+	}
+}
+
+relation CellContainsContent {
+	Cell playsRole cell;
+	Content playsRole content;
+}
+
+relation BinaryFunctionContainsLeftNonFunction {
+	BinaryFunction playsRole binaryFunctionLeft;
+	NonFunction playsRole leftNonFunction {
+		multiplicity 1..1;
+	}
+}
+
+relation BinaryFunctionContainsRightNonFunction {
+	BinaryFunction playsRole binaryFunctionRight;
+	NonFunction playsRole rightNonFunction {
+		multiplicity 1..1;
+	}
+}
+
+relation IntervalFunctionContainsInterval {
+	IntervalFunction playsRole intervalFunction;
+	Interval playsRole intervals{
+		multiplicity 1..2;
+	}
+}
+
+relation CellContainsReferences {
+ Cell playsRole referencedCell;
+ Reference playsRole CellReference{
+  multiplicity *;
+ }
+}
+
+relation BubbleDocsContainsUsers {
+	BubbleDocs playsRole bubbleDocs;
+	User playsRole user {
+		multiplicity 1..*;
+	}
+}
+
+relation BubbleDocsContainsSpreadSheets {
+	BubbleDocs playsRole bubbleDocs;
+	SpreadSheet playsRole spreadSheet {
+		multiplicity *;
+	}
+}
+
+relation BubbleDocsContainsSessions {
+	BubbleDocs playsRole bubbleDocs;
+	Session playsRole session {
+		multiplicity *;
+	}
+}
